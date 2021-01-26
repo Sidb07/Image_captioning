@@ -1,0 +1,27 @@
+{% extends "public/base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload an image</h1>
+      <hr>
+
+      <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <form id="form1" action='/upload-image' method='POST' enctype='multipart/form-data'
+        encoding='multipart/form-data' runat="server">
+        <button type='submit' class="btn btn-primary">Choose image</button>
+        <input class='picture-file-input' type='file' name='image' onchange="readURL(this);" />
+        <img id="blah" src="#" alt="your image" />
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
